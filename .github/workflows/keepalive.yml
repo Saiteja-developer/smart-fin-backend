@@ -1,0 +1,14 @@
+name: Keep SmartFin Backend Awake
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # every 5 minutes
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping SmartFin API
+        run: |
+          curl -I https://smart-fin-backend.onrender.com/api/ping
