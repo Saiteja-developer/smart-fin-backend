@@ -40,14 +40,14 @@ All backend development, design, and implementation by **Sai Teja**.
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-------------|
-| Language | Node.js |
-| Framework | Express.js |
-| Database | MongoDB + Mongoose |
-| Auth | JWT (Bearer Token) |
-| Mailing | Nodemailer |
-| AI / Analytics | Custom financial prediction engine |
+| Layer           | Technology                   |
+|-----------------|-----------------------------|
+| Language        | Node.js                     |
+| Framework       | Express.js                  |
+| Database        | MongoDB + Mongoose          |
+| Auth            | JWT (Bearer Token)          |
+| Mailing         | Nodemailer                  |
+| AI / Analytics  | Custom financial prediction engine |
 
 ---
 
@@ -58,69 +58,102 @@ All backend development, design, and implementation by **Sai Teja**.
 git clone https://github.com/Saiteja-developer/smart-fin-backend.git
 cd smart-fin-backend
 ```
+
 Install dependencies
 
-```
+```bash
 npm install
 ```
+
 Create a .env file in the root directory:
 
+```
 PORT=5000
 MONGO_URI=<your_mongodb_connection_string>
 JWT_SECRET=<your_jwt_secret>
 EMAIL_USER=<your_email_id>
 EMAIL_PASS=<your_email_password_or_app_password>
+```
 
 Start the server
-```
+
+```bash
 npm start
 ```
 
 or, for development:
-```
+
+```bash
 npm run dev
 ```
 
-Default: http://localhost:5000
+Default: http://localhost:5000  
 Deployed: https://smart-fin-backend.onrender.com
 
-API Overview
+---
 
-Base URL:
+## API Overview
 
+**Base URL:**
+
+```
 https://smart-fin-backend.onrender.com/api
+```
 
-Auth Routes
-Method	Endpoint	Description
-POST	/auth/register	Register new user
-POST	/auth/login	Login and receive JWT
-Transaction Routes
-Method	Endpoint	Description
-GET	/transactions	Get all user transactions
-POST	/transactions	Add new transaction
-PUT	/transactions/:id	Update transaction
-DELETE	/transactions/:id	Delete transaction
-Budget Routes
-Method	Endpoint	Description
-GET	/budget?month=YYYY-MM	Get budget for a month
-POST	/budget	Add or update monthly budget
-DELETE	/budget/:id	Delete a budget record
-Goal Routes
-Method	Endpoint	Description
-GET	/goals	Get all goals
-POST	/goals	Add a new goal
-PUT	/goals/:id	Update goal progress
-DELETE	/goals/:id	Delete a goal
-Analytics Routes
-Method	Endpoint	Description
-GET	/analytics/predict	Predict next-month expenses & health score
-Authentication Usage
+### Auth Routes
+
+| Method | Endpoint        | Description           |
+|--------|----------------|-----------------------|
+| POST   | /auth/register | Register new user     |
+| POST   | /auth/login    | Login and receive JWT |
+
+### Transaction Routes
+
+| Method | Endpoint            | Description              |
+|--------|---------------------|--------------------------|
+| GET    | /transactions       | Get all user transactions|
+| POST   | /transactions       | Add new transaction      |
+| PUT    | /transactions/:id   | Update transaction       |
+| DELETE | /transactions/:id   | Delete transaction       |
+
+### Budget Routes
+
+| Method | Endpoint                 | Description                 |
+|--------|--------------------------|-----------------------------|
+| GET    | /budget?month=YYYY-MM    | Get budget for a month      |
+| POST   | /budget                  | Add or update monthly budget|
+| DELETE | /budget/:id              | Delete a budget record      |
+
+### Goal Routes
+
+| Method | Endpoint         | Description         |
+|--------|------------------|---------------------|
+| GET    | /goals           | Get all goals       |
+| POST   | /goals           | Add a new goal      |
+| PUT    | /goals/:id       | Update goal progress|
+| DELETE | /goals/:id       | Delete a goal       |
+
+### Analytics Routes
+
+| Method | Endpoint               | Description                                    |
+|--------|------------------------|------------------------------------------------|
+| GET    | /analytics/predict     | Predict next-month expenses & health score      |
+
+---
+
+## Authentication Usage
 
 All protected endpoints require JWT authorization:
 
+```
 Authorization: Bearer <your_token_here>
+```
 
+---
 
+## Project Structure
+
+```
 smart-fin-backend/
 │
 ├── src/
@@ -134,12 +167,13 @@ smart-fin-backend/
 ├── package.json
 ├── server.js
 └── README.md
+```
 
+---
 
-Contribution
+## Contribution
 
 All development, architecture, and implementation for the SmartFin backend was done by:
 
-Sai Teja
-
+**Sai Teja**  
 Full Stack Developer | Node.js • Express • MongoDB
