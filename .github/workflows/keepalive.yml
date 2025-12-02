@@ -2,7 +2,7 @@ name: Keep SmartFin Backend Awake
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   # every 5 minutes
+    - cron: "0 0 * * *"   # once per day at midnight UTC
   workflow_dispatch:
 
 jobs:
